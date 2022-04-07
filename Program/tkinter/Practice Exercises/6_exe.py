@@ -1,8 +1,6 @@
 from tkinter import *
 from tkinter import ttk
 
-from pyparsing import col
-
 root = Tk()
 
 # When enter is pressed
