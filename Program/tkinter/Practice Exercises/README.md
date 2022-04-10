@@ -16,5 +16,6 @@
     <li>Basic Listbox</li>
     <li>Listbox with mutiple selection</li>
     <li>Modifying the Listbox with insert and delete</li>
+    <li>Adding images to the program</li>
 </ol>
 <!--Html tags can be used btw-->
