@@ -17,5 +17,6 @@
     <li>Listbox with mutiple selection</li>
     <li>Modifying the Listbox with insert and delete</li>
     <li>Adding images to the program</li>
+    <li>Decker task</li>
 </ol>
 <!--Html tags can be used btw-->
