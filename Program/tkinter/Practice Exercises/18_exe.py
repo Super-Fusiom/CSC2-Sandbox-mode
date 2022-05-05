@@ -98,7 +98,7 @@ decking_output.grid(row=11, column=1)
 quitter.grid(row=0,column=0)
 caculate.grid(row=0,column=1)
 
-#ligma balls or smthing...
+# The answer to your question is 42
 
 root.geometry('250x250')
 root.mainloop()
