@@ -6,11 +6,19 @@ def quit():
 
 root = Tk()
 root.title('Sunshine adventure camp')
+
+def update():
+    print('update')
+    printe()
+def printe():
+    print('updated and printed')
+def delete():
+    print('delete')
+
 # The buttons
-updatebtn = ttk.Button(root, text="Update")
+updatebtn = ttk.Button(root, text="Update", command=update)
 quitbtn = ttk.Button(root, text="Quit", command=quit)
-delbtn = ttk.Button(root, text="Delete")
-printbtn = ttk.Button(root, text="Print")
+delbtn = ttk.Button(root, text="Delete", command=delete)
 # Labels
 GLlabel = ttk.Label(root, text='Group Leader')
 CLabel = ttk.Label(root, text='Num of campers')
