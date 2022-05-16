@@ -35,13 +35,17 @@ def append_name ():
             int(entry_campers.get())
             # Check if the number is between 10 to 15
             if int(entry_campers.get()) >= 10 and int(entry_campers.get()) <= 15:
-                camp_details.append([entry_leader.get(),entry_location.get(),entry_campers.get(),entry_weather.get()])
-                entry_leader.delete(0,'end')
-                entry_location.delete(0,'end')
-                entry_campers.delete(0,'end')
-                entry_weather.delete(0,'end')
-                total_entries +=  1
-                print_camp_details()
+                # Check if a weather option has been selected 
+                if len(entry_weather.get()) != 0:
+                    camp_details.append([entry_leader.get(),entry_location.get(),entry_campers.get(),entry_weather.get()])
+                    entry_leader.delete(0,'end')
+                    entry_location.delete(0,'end')
+                    entry_campers.delete(0,'end')
+                    entry_weather.delete(0,'end')
+                    total_entries +=  1
+                    print_camp_details()
+                else:
+                    messagebox.showerror('error', 'What is your weather?')
             else:
                 messagebox.showerror('error', 'Number of campers must be between 10 to 15')
         except ValueError:
@@ -49,21 +53,26 @@ def append_name ():
 #delete a row from the list
 def delete_row ():
     global camp_details, delete_item, total_entries, name_count
-    del camp_details[int(delete_item.get())]
-    total_entries -= 1
-    delete_item.delete(0,'end')
-    Label(main_window, text="                        ").grid(column=0,row=name_count+7) 
-    Label(main_window, text="                        ").grid(column=1,row=name_count+7)
-    Label(main_window, text="                        ").grid(column=2,row=name_count+7)
-    Label(main_window, text="                        ").grid(column=3,row=name_count+7)
-    Label(main_window, text="                        ").grid(column=4,row=name_count+7)
-    print_camp_details()
+    try:
+        del camp_details[int(delete_item.get())]
+        total_entries -= 1
+        delete_item.delete(0,'end')
+        Label(main_window, text="                        ").grid(column=0,row=name_count+7) 
+        Label(main_window, text="                        ").grid(column=1,row=name_count+7)
+        Label(main_window, text="                        ").grid(column=2,row=name_count+7)
+        Label(main_window, text="                        ").grid(column=3,row=name_count+7)
+        Label(main_window, text="                        ").grid(column=4,row=name_count+7)
+        print_camp_details()
+    except IndexError:
+        messagebox.showerror('error', 'That row does not exist')
+    except ValueError:
+        messagebox.showerror('error', 'Is that even a number?')
 
-#create the buttons and labels
+#create the buttons and labels along with image
 def setup_buttons():
     global camp_details, entry_leader,entry_location,entry_campers,entry_weather, total_entries, delete_item
-    Button(main_window, text="Quit",command=quit) .grid(column=1, row=0)
-    Button(main_window, text="Update",command=append_name) .grid(column=0,row=0)
+    Button(main_window, text="Quit",command=quit) .grid(column=0, row=1)
+    Button(main_window, text="Update",command=append_name) .grid(column=1,row=1)
     Label(main_window, text="Leader").grid(column=0,row=2)
     entry_leader = Entry(main_window)
     entry_leader.grid(column=1,row=2)
@@ -79,16 +88,20 @@ def setup_buttons():
     entry_weather.grid(column=1,row=5)
     Label(main_window, text="Row #") .grid(column=0,row=6)
     delete_item = Entry(main_window)
-    delete_item .grid(column=1,row=6)
+    delete_item.grid(column=1,row=6)
     Button(main_window, text="Delete",command=delete_row) .grid(column=2,row=6)
-
+    #Image is here
+    logoimg = PhotoImage(file="icons/sunshine-adventure-camp.png")
+    logo = Label(main_window, image=logoimg)
+    logo.image = logoimg
+    logo.grid(column=0 ,row=0, columnspan=2)
 #start the program running
 def main():
     global main_window
     global camp_details, entry_name,entry_age,entry_gender, total_entries
     camp_details = []
     total_entries = 0
-    main_window =Tk()
+    main_window = Tk()
     setup_buttons()
     main_window.mainloop()
     
