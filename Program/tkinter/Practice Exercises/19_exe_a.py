@@ -50,6 +50,8 @@ def append_name ():
                 messagebox.showerror('error', 'Number of campers must be between 10 to 15')
         except ValueError:
             messagebox.showerror('error', 'Needs to be a whole number')
+    else:
+        messagebox.showerror('error', 'What is your leader name?')
 #delete a row from the list
 def delete_row ():
     global camp_details, delete_item, total_entries, name_count
