@@ -31,24 +31,31 @@ def append_name ():
     global camp_details, entry_leader,entry_location,entry_campers,entry_weather, total_entries
     if len(entry_leader.get()) != 0 :
         # Check if it's a number
-        try:
-            int(entry_campers.get())
-            # Check if the number is between 10 to 15
-            if int(entry_campers.get()) >= 10 and int(entry_campers.get()) <= 15:
-                # Check if a weather option has been selected 
-                if len(entry_weather.get()) != 0:
-                    camp_details.append([entry_leader.get(),entry_location.get(),entry_campers.get(),entry_weather.get()])
-                    entry_leader.delete(0,'end')
-                    entry_location.delete(0,'end')
-                    entry_campers.delete(0,'end')
-                    entry_weather.delete(0,'end')
-                    total_entries +=  1
-                    print_camp_details()
-                else:
-                    messagebox.showerror('error', 'What is your weather?')
-            else:
-                messagebox.showerror('error', 'Number of campers must be between 10 to 15')
-        except ValueError:
+        if int(entry_campers.get()) != ValueError:
+            try: 
+                int(entry_leader.get())
+                messagebox.showerror('error', "Leader's name aint a number")
+            except ValueError:
+                try:
+                    int(entry_location.get())
+                    messagebox.showerror('error', 'location is not a number')
+                except ValueError:
+                    # Check if the number is between 10 to 15
+                    if int(entry_campers.get()) >= 10 and int(entry_campers.get()) <= 15:
+                        # Check if a weather option has been selected 
+                        if len(entry_weather.get()) != 0:
+                            camp_details.append([entry_leader.get(),entry_location.get(),entry_campers.get(),entry_weather.get()])
+                            entry_leader.delete(0,'end')
+                            entry_location.delete(0,'end')
+                            entry_campers.delete(0,'end')
+                            entry_weather.delete(0,'end')
+                            total_entries +=  1
+                            print_camp_details()
+                        else:
+                            messagebox.showerror('error', 'What is your weather?')
+                    else:
+                        messagebox.showerror('error', 'Number of campers must be between 10 to 15')
+        else:
             messagebox.showerror('error', 'Needs to be a whole number')
     else:
         messagebox.showerror('error', 'What is your leader name?')
