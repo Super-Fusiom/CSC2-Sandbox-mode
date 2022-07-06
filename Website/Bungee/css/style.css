@@ -1,0 +1,45 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+header {
+  background-color: #00aeff;
+}
+
+h1{
+  font-size:3em;
+  text-align:center;
+}
+
+nav {
+  padding-top: 3em;
+  padding-right: 3em;
+  text-align:center;
+}
+
+.mainimg{
+  width:96%;
+  padding-top:2em;
+  padding-bottom:2em;
+  padding-left:1em;
+  padding-right:1em
+}
+
+.homelinks {
+  text-align:center;
+  font-size:19px;
+  color:#003b63;
+  padding-bottom:2em;
+}
+
+footer{
+  margin-bottom:0;
+  text-align:center;
+  color:white;
+  background-color:#ed107f;
+  padding-top:3em;
+  padding-bottom:3em;
+  padding-left:5em;
+  padding-right:5em;
+  font-size:24px;
+}
