@@ -1,9 +1,77 @@
+/* Home page stuff */
+
+#intro {
+  background: black url(../img/ultra-bungee-hero.jpg) no-repeat center;
+  background-size: cover;
+  padding-bottom: 60px;
+  padding-top: 250px;
+}
+
+/* Links in the middle inside the home page */
+.intro-block {
+  margin-top: 40em;
+  padding-top: 2em;
+  text-align:center;
+  font-size:19px;
+  color:#003b63;
+  padding-bottom:2em;
+  background-color: #bcf200;
+  
+}
+/* "The button" ruleset */
+.intro-block a{
+  display: inline-block;
+  color:inherit;
+  font-size: inherit;
+  margin: 30px 5px;
+  border: #003b63 2px solid;
+  min-width: 150px;
+  text-decoration: none;
+  padding: 1em;
+}
+
+/* Bridge page */
+#bridge {
+  background: black url(../img/bridge1.jpg) no-repeat center;
+  background-size: cover;
+  padding-bottom: 60px;
+  padding-top: 250px;
+}
+
+/* Canyon page */
+#canyon {
+  background: black url(../img/canyon1.jpg) no-repeat center;
+  background-size: cover;
+  padding-bottom: 60px;
+  padding-top: 250px;
+}
+
+/* Tower page */
+#tower {
+  background: black url(../img/tower1.jpg) no-repeat center;
+  background-size: cover;
+  padding-bottom: 60px;
+  padding-top: 250px;
+}
+
+
+/* Contact page*/
+.contact-block a{
+  display: inline-block;
+  color:inherit;
+  font-size: inherit;
+  margin: 30px 5px;
+  border: #003b63 2px solid;
+  min-width: 150px;
+  text-decoration: none;
+  padding: 1em;
+}
+
+/* Styling that affects all pages */
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
-}
-header {
-  background-color: #00aeff;
 }
 
 h1{
@@ -11,26 +79,40 @@ h1{
   text-align:center;
 }
 
+header {
+  background-color: #00aeff;
+}
+
 nav {
   padding-top: 3em;
   padding-right: 3em;
   text-align:center;
+  float: right;
 }
 
-.mainimg{
-  width:96%;
-  padding-top:2em;
-  padding-bottom:2em;
-  padding-left:1em;
-  padding-right:1em
+nav ul {
+  list-style-type: none; 
+  margin: 0; 
+  padding:0; 
 }
 
-.homelinks {
-  text-align:center;
-  font-size:19px;
-  color:#003b63;
-  padding-bottom:2em;
+nav li {
+  display:inline-block;
 }
+
+
+nav li a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+article {
+  text-align: center;
+}
+
+
 
 footer{
   margin-bottom:0;
