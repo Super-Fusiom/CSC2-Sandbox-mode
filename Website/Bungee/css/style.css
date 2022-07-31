@@ -5,6 +5,7 @@
   background-size: cover;
   padding-bottom: 60px;
   padding-top: 250px;
+  margin-top:-10em ;
 }
 
 /* Links in the middle inside the home page */
@@ -29,6 +30,37 @@
   text-decoration: none;
   padding: 1em;
 }
+/* All 3 content pages */
+
+#bridge-info h2 {
+  color:#003b63;
+  font-size: 6em;
+}
+
+.three-cards {
+  color: black;
+  font-size: 1em;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.three-cards h3 {
+  font-size: 4em;
+}
+
+.quote {
+  margin-top: 1em;
+  padding-top: 2em;
+  text-align:center;
+  font-size:19px;
+  color:white;
+  padding-bottom:2em;
+  margin-bottom: 40em;
+  background-color: #003b63c5;
+}
 
 /* Bridge page */
 #bridge {
@@ -36,6 +68,7 @@
   background-size: cover;
   padding-bottom: 60px;
   padding-top: 250px;
+  margin-top:-10em ;
 }
 
 /* Canyon page */
@@ -44,6 +77,7 @@
   background-size: cover;
   padding-bottom: 60px;
   padding-top: 250px;
+  margin-top:-10em ;
 }
 
 /* Tower page */
@@ -52,6 +86,7 @@
   background-size: cover;
   padding-bottom: 60px;
   padding-top: 250px;
+  margin-top:-10em ;
 }
 
 
@@ -70,7 +105,7 @@
 /* Styling that affects all pages */
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
 
@@ -80,7 +115,7 @@ h1{
 }
 
 header {
-  background-color: #00aeff;
+  background-color: #00aeff00;
 }
 
 nav {
@@ -105,6 +140,9 @@ nav li a {
   color: white;
   padding: 14px 16px;
   text-decoration: none;
+  background-color: rgba(88, 88, 88, 0.486);
+  border: #383535;
+  border-radius: 2em;
 }
 
 
@@ -112,6 +150,17 @@ article {
   text-align: center;
 }
 
+article a:hover {
+  color: white;
+  background-color: #003b63;
+  border-color: #003b63;
+}
+
+section a:hover {
+  color: white;
+  background-color: #003b63;
+  border-color: #003b63;
+}
 
 
 footer{
